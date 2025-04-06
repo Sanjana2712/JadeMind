@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Layout } from './components/common/Layout';
+import HomePage from './pages/HomePage';
+import VerboBOT from './pages/verboBotPage';
+import StoryTimePage from './pages/StoryTimePage';
+import { ThemeProvider } from './components/ThemeContext';
+import './styles/global.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/storytime" element={<StoryTimePage />} />
+            <Route path="/verbobot" element={<VerboBOT/>}/>
+
+          </Routes>
+        </Layout>
+      </Router>
+    </ThemeProvider>
   );
 }
 

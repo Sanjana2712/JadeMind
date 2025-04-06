@@ -1,0 +1,103 @@
+/* Sidebar Integration Styles with Theme Support */
+
+/* Content positioning with sidebar */
+.app-content {
+  margin-left: var(--sidebar-expanded-width);
+}
+
+/* When sidebar is collapsed */
+.app-content.content-expanded {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+/* StoryTime container with sidebar margin */
+.storytime-container {
+  margin-left: 180px; /* Default expanded sidebar width + spacing */
+  transition: margin-left 0.3s ease;
+}
+
+/* Class that can be toggled when sidebar is collapsed */
+.sidebar-collapsed .storytime-container {
+  margin-left: 90px; /* Collapsed sidebar width + spacing */
+}
+
+/* Dashboard specific styles */
+.dashboard-container {
+  margin-left: 260px; /* Default expanded sidebar width + spacing */
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-collapsed .dashboard-container {
+  margin-left: 90px; /* Collapsed sidebar width + spacing */
+}
+
+/* Sidebar collapsed class */
+.sidebar-collapsed {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+/* Explicit sidebar styles for dark mode */
+body.dark .sidebar,
+body.dark .MuiBox-root[aria-label="sidebar navigation"] {
+  background-color: #1a2a42 !important; /* Dark blue for sidebar */
+  border-right: 1px solid #2a3b58 !important;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2) !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark .MuiIconButton-root {
+  background-color: #2a3b58 !important;
+  color: #90caf9 !important;
+}
+
+body.dark .MuiIconButton-root:hover {
+  background-color: #3a4b68 !important;
+}
+
+body.dark .MuiAvatar-root {
+  background-color: #3a4b68 !important;
+  color: #90caf9 !important;
+}
+
+body.dark .MuiTypography-root {
+  color: #e0e0e0 !important;
+}
+
+body.dark .MuiTypography-h6 {
+  color: #90caf9 !important;
+}
+
+body.dark .MuiTypography-body2 {
+  color: #b0bec5 !important;
+}
+
+body.dark .MuiDivider-root {
+  background-color: #2a3b58 !important;
+}
+
+body.dark .MuiListItem-root {
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark .MuiListItem-root[style*="background-color: rgb(232, 244, 255)"] {
+  background-color: #3a4b68 !important;
+  color: #90caf9 !important;
+}
+
+/* Responsive adjustments for sidebar integration */
+@media (max-width: 768px) {
+  .storytime-container,
+  .sidebar-collapsed .storytime-container,
+  .dashboard-container,
+  .sidebar-collapsed .dashboard-container {
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .app-content,
+  .app-content.content-expanded {
+    margin-left: 0;
+  }
+}
